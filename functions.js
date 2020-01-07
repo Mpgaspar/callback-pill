@@ -1,4 +1,5 @@
-/*function a(){
+ //Without callback
+ function a(){
     console.log("Se ha ejecutado la función a");
   }
   
@@ -7,18 +8,20 @@
   }
   
   a();
-  b();*/
+  b();
 
-  function a(){
-    // Simulamos un tiempo de espera en la ejecución de la función a
-    setTimeout( function(){
-      console.log("Se ha ejecutado la función a");
-    }, 1000 );
+  //With callback
+  function a(callback){
+    setTimeout(function(){
+      callback(console.log("Se ha ejecutado la función a"));
+    },1000);
   }
   
   function b(){
     console.log("Se ha ejecutado la función b");
   }
   
-  a();
-  b();
+  a(b);
+
+  
+  
